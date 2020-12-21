@@ -7,9 +7,11 @@ class ModelTests(TestCase):
         """Test creating a new user with an email is successful"""
         email = 'test@londonappdev.com'
         password = 'Testpass123'
+        name = 'Test name'
         user = get_user_model().objects.create_user(
             email = email,
-            password = password
+            password = password,
+            name = name
         )
 
         self.assertEqual(user.email, email)
